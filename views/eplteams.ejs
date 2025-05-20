@@ -1,0 +1,34 @@
+<%- include('partials/head') %>
+<body>
+    <%- include('partials/navbar') %>
+    <!-- names of teams and their citys -->
+
+    <h1>This is a list of good teams in europe</h1>
+    <ul>
+        <% teams.forEach(team => { %>
+            <li>
+                <%= team.name %> - <%= team.city %>
+            </li>
+        <% }); %>
+    </ul>
+ <!-- names of teams  -->
+    <ul>
+        <% for (let i = 0; i < teams.length; i++) { %>
+            <li>
+                <%= teams[i].name %>
+            </li>
+        <% } %>
+    </ul>
+<!-- names of citys -->
+    <ul>
+        <% for (let team of teams) { %>
+        <li>
+            <%= team.city %>
+        </li> 
+        <% } %>
+    </ul>
+    <footer>
+        <p>Teams page</p>
+    </footer>
+</body>
+</html>

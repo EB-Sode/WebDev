@@ -1,0 +1,33 @@
+<%- include('partials/head') %>
+
+<body>
+    <%- include('partials/navbar') %>
+    <div class="container">
+    <h2>This is the <%= subreddit %> page</h2>
+
+    <h3>The data is:</h3>
+    <section>
+        <div>
+            <%= name %>
+        </div>
+        <div>
+            <%= description %>
+        </div>
+    
+        <div>
+            <% for (let post of posts) { %>
+                <div>
+                    <h2>The title reads: <%= post.title %></h2>
+                    <h3>by: <%= post.author %> </h3>
+                </div>
+                <div>
+                    <% if (post.img) { %>
+                        <img src="<%= post.img %>" alt="">
+                    <% } %>  
+                </div>
+            <% } %>
+        </div>
+    </section> <!-- Fixed the closing tag -->
+    </div>
+</body>
+</html>
